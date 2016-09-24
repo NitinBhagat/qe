@@ -4,15 +4,59 @@
     {
       "type": "NativeScript:view",
       "name": "homeView",
-      "components": [],
+      "components": [
+        {
+          "type": "NativeScript:form",
+          "components": [
+            {
+              "type": "NativeScript:field",
+              "name": "txtjpplno",
+              "title": "JetPrivilege number",
+              "inputType": "text",
+              "titlePosition": "top",
+              "inputTextType": "text",
+              "placeholder": "Type here ..."
+            }
+          ],
+          "name": "homeViewModel",
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
       "title": "Home View",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "NativeScript:view",
+      "name": "mainpage",
+      "components": [
+        {
+          "type": "NativeScript:form",
+          "components": [
+            {
+              "type": "NativeScript:field",
+              "name": "name",
+              "title": "Text field",
+              "inputType": "text",
+              "titlePosition": "left",
+              "inputTextType": "text",
+              "placeholder": "Type here ..."
+            }
+          ],
+          "name": "mainpageModel",
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "title": "Form",
+      "addToNavigation": true,
+      "icon": "bookmarks"
     }
   ],
   "dataProviders": [],
   "name": "nativeScriptApp",
-  "navigation": "listmenu",
-  "transition": "none",
+  "navigation": "none",
+  "view": "homeView",
   "skin": "native"
 }

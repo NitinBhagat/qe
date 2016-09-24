@@ -2,10 +2,20 @@
 var isInit = true,
     helpers = require('../../utils/widgets/helper'),
     navigationProperty = require('../../utils/widgets/navigation-property'),
+
+    gestures = require('ui/gestures'),
     // additional requires
+
     viewModel = require('./homeView-view-model');
 
+function onhomeViewModelFormSubmit() {}
+
+function onhomeViewModelFormCancel() {
+    helpers.back();
+}
+
 // additional functions
+
 function pageLoaded(args) {
     var page = args.object;
 
@@ -16,7 +26,12 @@ function pageLoaded(args) {
     if (isInit) {
         isInit = false;
 
+        viewModel.on(viewModel.events.homeViewModelSubmit, onhomeViewModelFormSubmit);
+
+        viewModel.on(viewModel.events.homeViewModelCancel, onhomeViewModelFormCancel);
+
         // additional pageInit
+
     }
 }
 

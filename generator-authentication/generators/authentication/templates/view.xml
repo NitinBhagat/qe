@@ -1,0 +1,37 @@
+<!-- start template -->
+<GridLayout rows="auto, auto, auto, auto, auto" columns="*, *"
+    <% if(enableRegistration) { %>visibility="{{ signinVisibility }}"<% } %>>
+    <Label text="<%= emailLabel %>" cssClass="form-label" />
+    <TextField col="1" text="{{ email }}" cssClass="form-field" />
+    <StackLayout colSpan="2" cssClass="form-item-border" />
+
+    <Label row="1" text="<%= passwordLabel %>" cssClass="form-label" />
+    <TextField row="1" col="1" text="{{ password }}" secure="true" cssClass="form-field" />
+    <StackLayout row="1" colSpan="2"<% if (!enableRememberme) { %> rowSpan="2"<% } %> cssClass="form-item-border" />
+<% if (enableRememberme) { %>
+    <Label row="2" text="<%= remembermeLabel %>" cssClass="form-label" />
+    <Switch row="2" col="1" checked="{{ rememberme }}" cssClass="form-field" />
+    <StackLayout row="2" colSpan="2" cssClass="form-item-border" />
+<% } %>
+    <widgets:button row="3" colSpan="2" text="<%= signinLabel %>" tap="{{ onSignin }}" /><% if (enableRegistration) { %>
+    <Label row="4" colSpan="2" text="<%= gotoRegisterLabel %>" tap="{{ onShowRegister }}" cssClass="form-link" />
+</GridLayout>
+<GridLayout rows="auto, auto, auto, auto, auto" columns="*, *" visibility="{{ registerVisibility }}">
+    <Label text="<%= registerEmailLabel %>" cssClass="form-label" />
+    <TextField col="1" text="{{ email }}" cssClass="form-field" />
+    <StackLayout colSpan="2" cssClass="form-item-border" />
+
+    <Label row="1" text="<%= registerPasswordLabel %>" cssClass="form-label" />
+    <TextField row="1" col="1" text="{{ password }}" secure="true" cssClass="form-field" />
+    <StackLayout row="1" colSpan="2" cssClass="form-item-border" />
+
+    <% if (typeof(registerNameLabel) !== 'undefined' && registerNameLabel) { %>
+        <Label row="2" text="<%= registerNameLabel %>" cssClass="form-label" />
+        <TextField row="2" col="1" text="{{ displayName }}" cssClass="form-field" />
+        <StackLayout row="2" colSpan="2" cssClass="form-item-border" />
+    <% } %>
+
+    <widgets:button row="3" colSpan="2" text="<%= registerLabel %>" tap="{{ onRegister }}" />
+    <Label row="4" colSpan="2" text="<%= gotoSigninLabel %>" tap="{{ onShowSignin }}" cssClass="form-link" /><% } %>
+</GridLayout>
+<!-- end template -->

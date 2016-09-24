@@ -5,32 +5,30 @@ var ViewModel,
 
 ViewModel = new Observable({
 
-    backButtonHidden: true,
-
-    pageTitle: 'Home View',
+    pageTitle: 'Form',
 
     events: {
-        homeViewModelSubmit: 'homeViewModelSubmit',
-        homeViewModelCancel: 'homeViewModelCancel'
+        mainpageModelSubmit: 'mainpageModelSubmit',
+        mainpageModelCancel: 'mainpageModelCancel'
     },
 
-    onhomeViewModelFormSubmit: function() {
+    onmainpageModelFormSubmit: function() {
         this.notify({
-            eventName: this.events.homeViewModelSubmit
+            eventName: this.events.mainpageModelSubmit
         });
     },
 
-    onhomeViewModelFormCancel: function() {
+    onmainpageModelFormCancel: function() {
         this.notify({
-            eventName: this.events.homeViewModelCancel
+            eventName: this.events.mainpageModelCancel
         });
     },
     // additional properties
 
 });
 
-// START_CUSTOM_CODE_homeView
+// START_CUSTOM_CODE_mainpage
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
-// END_CUSTOM_CODE_homeView
+// END_CUSTOM_CODE_mainpage
 module.exports = ViewModel;
